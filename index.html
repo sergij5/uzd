@@ -1,15 +1,45 @@
-<canvas id="canv" width="300" height="300"></canvas>
-<script>
-    const canv = document.getElementById('canv');
-    const ctx = canv.getContext('2d');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
 
-    function draw(w, h) {
-        for (let i = 0; i < w; i++) {
-            for (let j = 0; j < h; j++) {
-                ctx.fillRect(20*i, 20*j, 10, 10);
-            }
-        }
-    }
-    draw(10, 4);
+    <script src="scripts/draw-ellipse.js"></script>
+</head>
+<body>
+<div id ="elem"></div>
+<canvas id = "can" width="3000" height="6000"></canvas>
+<script>
+    var canvas = document.getElementById('can');
+    var ctx = canvas.getContext('2d');
+
+    ctx.fillStyle="#975B5B";
+    ctx.strokeStyle="black";
+    ctx.lineWidth="3";
+    ctx.save();
+
+    // Draw a triangle for the roof
+    ctx.beginPath();
+    ctx.moveTo(100,260);
+    ctx.lineTo(300,10);
+    ctx.lineTo(500,260);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.fillRect(100, 260, 400, 350);
+    ctx.strokeRect(100, 260, 400, 350);
+
+    ctx.fillStyle="#ADD8E6";
+    ctx.strokeRect(150, 350, 100, 100);
+    ctx.fillRect(150, 350, 100, 100);
+
+    ctx.fillStyle="#975B5B";
+    ctx.strokeRect(350, 400, 150, 210);
+    ctx.fillRect(350, 400, 149, 209);
+
     
+
 </script>
+</body>
+</html>
